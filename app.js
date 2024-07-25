@@ -1,6 +1,7 @@
 const express = require('express');
 const rateLimit = require('express-rate-limit');
 const { RateLimiterMemory, RateLimiterRes } = require('rate-limiter-flexible');
+const rateLimitMiddleware = require('./rateLimiter');
 
 const app = express();
 const port = 3000;
@@ -19,6 +20,9 @@ app.use((req, res, next) => {
   console.log(`[${new Date().toLocaleString()}] ${req.method} ${req.path}`);
   next();
 });
+
+// Apply token bucket to all routes
+app.use(rateLimitMiddleware);
 
 app.use('/limited', limiter);
 
