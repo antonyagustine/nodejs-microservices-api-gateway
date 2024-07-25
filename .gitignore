@@ -1,0 +1,14 @@
+# Fill node app git ignore files
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.DS_Store
+yarn.lock
+package-lock.json
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# End of node app git ignore files
