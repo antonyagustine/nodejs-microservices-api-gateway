@@ -12,3 +12,4 @@ package-lock.json
 .env.test.local
 .env.production.local
 # End of node app git ignore files
+*.log
